@@ -1,0 +1,12 @@
+{
+  "name": "download-json-as-csv",
+  "version": "1.0.0",
+  "description": "A simple function to download JSON data as CSV file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["json to csv"],
+  "author": "Miguel Angel de la Garza Castañuela",
+  "license": "MIT"
+}
