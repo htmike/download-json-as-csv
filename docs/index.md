@@ -1,6 +1,3 @@
-# Download json as csv
-Simple método para descargar objeto a .csv 
-
 ## Instalación
 npm:
 ```
