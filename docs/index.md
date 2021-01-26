@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+# Download json as csv
+Simple método para descargar objeto a .csv 
 
-You can use the [editor on GitHub](https://github.com/htmike/download-json-as-csv/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+## Instalación
+npm:
+```
+npm install @htmike/downloadr-json-as-csv
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+yarn:
+```
+yarn add @htmike/downloadr-json-as-csv
+```
 
-### Jekyll Themes
+## Uso
+Javascript
+```js
+import { toJson } from '@htmike/downloadr-json-as-csc';
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/htmike/download-json-as-csv/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+const list = [
+  { name: 'Mike', id: 1, level: 10 },
+  { name: 'Mickey', id: 2, level: 9}
+];
 
-### Support or Contact
+toCSV(list, 'lista'); // Result lista.csv
+                       // name|id|level
+                       // Mike|1|10
+                       // Mickey|2|9
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+With API requests
+```js
+fetch('https://jsonplaceholder.typicode.com/todos/')
+  .then(response => response.json())
+  .then(json => toCSV(json, 'lista')) // Result lista.csv
+                                      // completed|id|title|userId
+                                      // false|1|delectus aut autem|1
+                                      // ...
+```
